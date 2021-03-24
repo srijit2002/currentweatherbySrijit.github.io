@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Live Weather</title>
+</head>
+
+<body class="flex__container__column__direction">
+
+<!-- navbar with haabueger menu -->
+  <nav class="header" id="header">
+    <ul class="menu">
+      <li><a href="#">Contact Me</a> </li>
+      <li id="copyright">Created by Srijit Mondal||&copy; All right reserved</li>
+    </ul>
+    <h3></h3>
+  </nav>
+
+  <!-- upper half for positioning starts from here -->
+  <div class="upper__half flex__container__column__direction">
+    <!-- header section -->
+    <header class="navbar flex__container__row__direction">
+      <div class="nav__icon" id="hamburger">
+        <img src="./menu.svg" alt="more" />
+      </div>
+      <div class="search__panel">
+        <input type="text" class="search__bar" placeholder="Type location here" id="search__bar">
+        <div class="search__icon" id="search__box">
+          <img src="./search.svg" alt="search">
+.
+    </header>
+
+    <!-- location section -->
+    <section class="location__output">
+      <p class="location__text" id="location__of__user">Loading...</p>
+      <p class="date__time__subtext" id="date__month__year__day">Loading...</p>
+    </section>
+
+    <!-- main weather report -->
+    <main class="primary__weather__report flex__container__row__direction">
+      <div class="temperature__output glass__box card">
+        <p class="real__tem">
+          <h1 class="temperature" id="realTemp">32<sup>o</sup></h1>
+        </p>
+        <h3 class="feel__temp" id="appar__temp">Loading...</h3>
+      </div>
+      <div class="primary__weather__icon__container  flex__container__column__direction glass__box card" id="primary__weather__icon__conatainer">
+     
+      </div>
+    </main>
+  </div>
+  <!--upper half for positioning ends here-->
+
+  <!-- lower half for positioning starts from here-->
+
+  <aside class="secondary__weather__report flex__container__row__direction lower__half glass__box">
+    <div class="other__weather__report__of__present__day flex__container__column__direction">
+     
+      <div class="cloudy__box flex__container__row__direction">
+        <div class="cloudy__icon mini__icons__for__seconday__weather__report">
+          <img src="./cloudy.svg" alt="covered with cloud">
+        </div>
+        <span class="cloudy__text secondary__weather__information" id="cloudy">Loading...</span>
+      </div>
+
+      <div class="humidity__box flex__container__row__direction">
+        <div class="humidity__icon mini__icons__for__seconday__weather__report">
+          <img src="./humidity.svg" alt="Humidity">
+        </div>
+        <span class="humidity__text secondary__weather__information" id="humidity">Loading...</span>
+      </div>
+
+      <div class="wind__box flex__container__row__direction">
+        <div class="wind__icon mini__icons__for__seconday__weather__report">
+          <img src="./wind.svg" alt="wind speed">
+        </div>
+        <span class="wind__text secondary__weather__information" id="windSpeed">Loading...</span>
+      </div>
+
+    </div>
+    <div class="rightline__at__bottom"></div>
+    <div class="weather__forecast flex__container__column__direction">
+      <div class="tomorrow__forecast">
+        <h4 class="weather__forecast__tittle">Tomorrow</h4>
+        <div class="tomorrow__forecast__box flex__container__row__direction">
+          <span class="tomorrow__weather__subtext">Premium users only</span>
+          <div class="tomorrow__weather__icon mini__icons__for__seconday__weather__report"></div>
+        </div>
+      </div>
+      <div class="yesterday__forecast">
+        <h4 class="weather__forecast__tittle">Yesterday</h4>
+        <div class="yesterday__forecast__box flex__container__row__direction">
+          <span class="yesterday__weather__subtext">Premium users only</span>
+          <div class="yesterday__weather__icon mini__icons__for__seconday__weather__report"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+  <!-- script files -->
+  <script defer src="./app.js"></script>
+</body>
+
+</html>

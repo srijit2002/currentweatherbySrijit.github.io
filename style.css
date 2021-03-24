@@ -1,0 +1,354 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: Ailron--bold;
+  src: url("./Aileron-Bold.otf");
+}
+@font-face {
+  font-family: Ailron--semi--bold;
+  src: url("./Aileron-SemiBold.otf");
+}
+@font-face {
+  font-family: OpenSans--bold;
+  src: url("./OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: OpenSans--regular;
+  src: url("./OpenSans-Regular.ttf");
+}
+:root {
+  --primary-color:white;
+  --text-size-large:5rem;
+  --text-size-big:2.5rem;
+  --text-size-middle:1.1rem;
+  --text-size-small:0.8rem;
+  --light:300;
+  --bold:700;
+  --semibold:5400;
+  --blur-radius:5px;
+  --clear-searchbox-day-color:#eaa24e;
+  --clear-searchbox-night-color:#d555c9;
+  --rainy-searchbox-color:#ce3f5d;
+  --snowfall-searchbox-day-color:#405493;
+  --snowfall-searchbox-night-color:#c64114;
+  --storm-searchbox-color:#b45cae;
+  --cloudy-searchbox-color:#de635e;
+  --overcloud-searchbox-color:#616161;
+  --mist-searchcbox-color:#5eb9f5;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0vh;
+  z-index: 10;
+  transition: all 1.2s ease-in-out;
+}
+.header ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.header ul li {
+  list-style: none;
+  font-size: var(--text-size-big);
+  font-family: OpenSans--regular;
+  border-bottom: 1px solid var(--primary-color);
+  margin: 0.3em 0.5em;
+  text-transform: uppercase;
+}
+.header ul li a {
+  color: var(--primary-color);
+  padding: 1em 0.5em;
+  text-decoration: none;
+}
+.header ul li a::hover {
+  cursor: pointer;
+  color: var(--snowfall-searchbox-night-color);
+}
+
+#copyright {
+  font-size: 0.8rem;
+  border: none;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.search__panel {
+  display: flex;
+  margin: 0.5em;
+  width: 70vw;
+  height: 11vw;
+}
+.search__panel .search__bar {
+  width: 90%;
+  height: 100%;
+  font-size: 1.2rem;
+  padding: 0.5em;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background: url("./snow night.jpg") no-repeat center center/cover;
+  justify-content: space-between;
+}
+
+.upper__half {
+  transform-origin: top;
+  justify-content: space-between;
+  padding: 1.5em;
+  margin-bottom: 1.3em;
+}
+
+.search__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12vw;
+  height: 11vw;
+  padding: 0.1em;
+  z-index: 2;
+}
+.search__icon img {
+  display: block;
+  width: 75%;
+  height: 75%;
+  filter: invert(100%);
+}
+
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__icon {
+  transition: all 0.6s ease-in;
+  transform-origin: center center;
+  z-index: 10;
+  width: 12vw;
+  height: 11vw;
+}
+.nav__icon img {
+  width: 95%;
+  height: 95%;
+  transform: rotateY(180deg);
+  filter: invert(100%);
+}
+
+.location__output {
+  margin: 1.2em 0.2em;
+}
+
+.location__text {
+  font-size: var(--text-size-big);
+  line-height: 2.2rem;
+  font-family: Ailron--semi--bold;
+  color: var(--primary-color);
+  padding-bottom: 0.1em;
+}
+
+.date__time__subtext {
+  border-top: 2px solid var(--primary-color);
+  width: fit-content;
+  padding: 2px;
+  font-size: var(--text-size-small);
+  font-family: OpenSans--regular;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--primary-color);
+}
+
+.primary__weather__report {
+  justify-content: space-around;
+}
+
+.card {
+  width: 35vw;
+  height: 35vw;
+  border-radius: 15px;
+  justify-content: space-around;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  margin: 1.2em;
+}
+
+.real__tem ~ .temperature {
+  text-align: justify;
+  font-family: OpenSans--regular;
+  font-size: var(--text-size-large);
+  color: var(--primary-color);
+}
+
+.real__tem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -2px;
+}
+
+.temperature > sup {
+  color: var(--primary-color);
+  font-size: 3rem;
+  font-family: openSans--bold;
+}
+
+.temperature {
+  display: flex;
+}
+
+.feel__temp {
+  color: var(--primary-color);
+  font-size: var(--text-size-middle);
+  margin-right: 0.5em;
+  font-family: OpenSans--regular;
+}
+
+.temperature__output,
+.primary__weather__icon__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.primary__weather__icon {
+  filter: invert(100%);
+  width: 60%;
+}
+
+.lower__half {
+  padding: 1em 0.5em;
+  justify-content: space-around;
+}
+
+.other__weather__report__of__present__day,
+.weather__forecast {
+  width: 45%;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 0px 0.5em;
+}
+
+.wind__box,
+.cloudy__box,
+.humidity__box {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tomorrow__forecast__box,
+.yesterday__forecast__box {
+  justify-content: space-between;
+}
+
+.rightline__at__bottom {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  width: 1px;
+  height: 75%;
+  background-color: white;
+}
+
+.primary__weather__tittle {
+  margin-top: 0.1em;
+  color: var(--primary-color);
+  font-family: OpenSans--regular;
+  font-weight: 100;
+}
+
+.weather__forecast__tittle {
+  font-size: 1.7rem;
+  font-family: OpenSans--regular;
+  color: var(--primary-color);
+}
+
+.tomorrow__weather__subtext,
+.yesterday__weather__subtext {
+  border-top: 2px solid white;
+  text-transform: uppercase;
+  font-family: OpenSans--regular;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.flex__container__column__direction {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex__container__row__direction {
+  display: flex;
+}
+
+.glass__box {
+  backdrop-filter: blur(var(--blur-radius));
+}
+
+.mini__icons__for__seconday__weather__report {
+  width: 30%;
+  max-width: 58px;
+}
+.mini__icons__for__seconday__weather__report img {
+  width: 100%;
+  filter: invert(100%);
+}
+
+.secondary__weather__information {
+  font-family: OpenSans--regular;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.theme--raining--mobile {
+  background: url("https://images.pexels.com/photos/2448749/pexels-photo-2448749.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") no-repeat center center/cover;
+}
+
+.theme--thunder--mobile {
+  background: url("https://images.unsplash.com/photo-1504792001904-7a52bab2ec06?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80") no-repeat center center/cover;
+}
+
+.theme--snow--day--mobile {
+  background: url("https://cdn.pixabay.com/photo/2021/01/23/13/01/hills-5942468_960_720.jpg") no-repeat center center/cover;
+}
+
+.theme--snow--night--mobile {
+  background: url("https://images.unsplash.com/photo-1551582045-6ec9c11d8697?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=401&q=80") no-repeat center center/cover;
+}
+
+.theme--clear--day--mobile {
+  background: url("https://images.pexels.com/photos/1353126/pexels-photo-1353126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center/cover;
+}
+
+.theme--clear--night--mobile {
+  background: url("https://images.pexels.com/photos/544268/pexels-photo-544268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center/cover;
+}
+
+.theme--cloudy--day--mobile {
+  background: url("https://images.pexels.com/photos/3227984/pexels-photo-3227984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center/cover;
+}
+
+.theme--dark--cloud--mobile {
+  background: url("https://images.pexels.com/photos/1755683/pexels-photo-1755683.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center/cover;
+}
+
+.theme--mist--mobile {
+  background: url("https://images.pexels.com/photos/1679772/pexels-photo-1679772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center/cover;
+}
+
+/*# sourceMappingURL=style.css.map */
